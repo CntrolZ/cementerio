@@ -1,0 +1,566 @@
+/*Estilos generales*/
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/*Estilos del div en el cual se cargan las imagenes en 360°*/
+
+#panorama {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilos del preloader */
+
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: rgb(0, 128, 43);
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(24px, 0);
+    }
+}
+
+.preload {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2500;
+}
+
+/* Estilos de controles personalizados */
+
+.controles {
+    position: absolute;
+    left: 0px;
+    height: 100%;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control {
+    padding: 5px;
+}
+
+.control .ctrl {
+    padding: 8px 5px;
+    width: 25px;
+    text-align: center;
+    background: #000;
+    display: block;
+    cursor: pointer;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+
+.ctrl i {
+    color: red;
+}
+
+/*Ocultamos la informacion de la panoramica por defecro ubicado en la parte inferior izquierda*/
+
+.pnlm-panorama-info {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.pnlm-error-msg {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/*Estilos del navbar*/
+
+.nav-bar {
+    z-index: 500;
+    position: absolute;
+    top: 0;
+    height: 40px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #00802b;
+}
+
+.nav-bar .contenedor-titulo {
+    padding-left: 5px;
+}
+
+.nav-bar .contenedor-titulo #tituloEscena {
+    color: #fff;
+    font-size: 16px;
+}
+
+.nav-bar .contenedor-icono-menu {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 15px;
+}
+
+.contenedor-icono-menu #btnMenu {
+    background-color: transparent;
+    border: none;
+}
+
+.nav-bar .contenedor-icono-menu #iconoMenu {
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/*Estilos del menu lateral derecho*/
+
+.side-bar {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    bottom: 0;
+    padding: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin: 0;
+    z-index: 600;
+    margin-right: -100%;
+    overflow: hidden;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu i {
+    color: #fff;
+}
+
+.menu .menu-item .enlace {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.menu .menu-item .enlace .enlace-icono {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+}
+
+.menu .menu-item .enlace .enlace-icono i {
+    color: #fff;
+    font-size: 15px;
+}
+
+.menu .menu-item .enlace .enlace-texto {
+    width: 90%;
+    margin: 0;
+    padding: 0;
+}
+
+.menu .menu-item .enlace .enlace-texto span {
+    display: block;
+    margin: 0;
+    padding: 0;
+    padding: 10px;
+    color: #fff;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.menu .menu-item .enlace .enlace-texto span:hover {
+    background-color: rgb(40, 180, 99);
+}
+
+.enlace-activo {
+    background-color: rgb(40, 180, 99);
+}
+
+.icono-activo {
+    color: rgb(40, 180, 99);
+}
+
+/*Estilos responsive del menu lateral derecho*/
+
+@media(min-width:640px) {
+    .side-bar {
+        width: 300px;
+    }
+    .nav-bar .contenedor-titulo #tituloEscena {
+        color: #fff;
+        font-size: 25px;
+    }
+}
+
+/* Hace visible el menu lateral derecho */
+
+.mostrar-menu-lateral {
+    margin-right: 0;
+    transition: 1s all;
+}
+
+.ocultar-menu-lateral {
+    margin-right: -100%;
+    transition: 1s all;
+}
+
+.ocultar-menu-lateral-movil {
+    margin-right: -100%;
+}
+
+.desabilita-menu {
+    pointer-events: none;
+}
+
+.habilita-menu {
+    pointer-events: all;
+}
+
+/*Ocultamos el acerca de pannellum al hacer click derecho*/
+
+.pnlm-about-msg {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.side-bar::-webkit-scrollbar {
+    display: none;
+    /* Ocultar scroll */
+}
+
+/*Estilos del cuadro de informacion en celulares*/
+
+.contendor-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 1100;
+    visibility: hidden;
+}
+
+.contendor-modal .contenedorTituloInformacion {
+    background-color: rgb(0, 128, 43);
+    height: 60px;
+    z-index: 1200;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contendor-modal .tituloInformacion {
+    width: 85%;
+    padding-left: 10px;
+}
+
+.contendor-modal .tituloInformacion span {
+    color: #fff;
+    font-size: 16px;
+}
+
+.contendor-modal .botonCerrarModal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    height: 100%;
+    z-index: 1300;
+}
+
+.contendor-modal .botonCerrarModal i {
+    color: red;
+    font-size: 30px;
+}
+
+.contendor-modal .modal {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    overflow-y: auto;
+    padding: 0 10px;
+    z-index: 1200;
+}
+
+.modal p {
+    color: #fff;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+/*Estilos del cuadro de informacion en dispositivos que no sean celulares*/
+
+div.custom-tooltip div {
+    visibility: hidden;
+    position: absolute;
+    border-radius: 10px;
+    width: 400px;
+    height: auto;
+    margin-left: -220px;
+    cursor: default;
+}
+
+div.custom-tooltip div h3 {
+    background-color: rgb(40, 180, 99);
+    color: #fff;
+    display: block;
+    height: auto;
+    text-align: center;
+    margin: 0;
+    padding: 3px;
+    font-weight: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+div.custom-tooltip div p {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 3px 10px;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/*Estilo pantalla de inicio*/
+
+.contenedor-imagnes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    z-index: 1500;
+}
+
+.contenedor-imagnes .fondo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contenedor-logos {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 20%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contenedor-logos .logos {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contenedor-logos .logos .logo {
+    width: 49%;
+    margin: 0;
+    padding: 0;
+}
+
+.contenedor-logos .logos .logo img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.contenedor-logos .contenedor-boton-visita-virtual {
+    width: 98%;
+}
+
+.contenedor-logos .contenedor-boton-visita-virtual #botonVisitaVirtual {
+    width: 100%;
+    font-size: 23px;
+    background-color: rgba(0, 128, 43, 0.9);
+    color: #fff;
+    border: none;
+    padding: 5px 0;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    cursor: pointer;
+}
+
+.contenedor-logos .contenedor-boton-visita-virtual #botonVisitaVirtual:hover {
+    color: rgba(0, 128, 43, 0.8);
+    background-color: #fff;
+    border: 2px solid rgba(0, 128, 43, 1);
+}
+
+@media(max-width: 640px) {
+    .contenedor-logos {
+        top: 15px;
+        right: 15px;
+        width: 50%;
+    }
+}
+
+.contenedor-error {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    z-index: 1400;
+}
+
+.contenedor-error .imagen-error {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*Estilos de la interfaz de error*/
+
+.contenedor-elementos-error {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.contenedor-error .contenedor-titulo-error {
+    width: 100%;
+    height: 48%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.contenedor-error .contenedor-titulo-error .titulo-error {
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.contenedor-error .contenedor-botones-error {
+    width: 100%;
+    height: 48%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.contenedor-error .contenedor-botones-error button {
+    width: 49%;
+    height: 40px;
+    font-size: 15px;
+    background-color: rgba(0, 128, 43, 1);
+    color: #fff;
+    border-radius: 15px;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.contenedor-error .contenedor-botones-error button:hover {
+    color: rgba(0, 128, 43, 1);
+    background-color: #fff;
+}

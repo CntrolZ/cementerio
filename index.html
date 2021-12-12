@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cementerio de Tulcán - José María Azael Franco Guerrero</title>
+    <meta name="description"
+        content="El Cementerio de Tulcán, denominado oficialmente José María Azael Franco Guerrero, mediante Ordenanza Municipal el 10 de octubre del 2005, en reconocimiento al creador de la Obra majestuosa Esculturas en verde, por el insigne artista angeleño carchense, esta localizado en la parte noreste de la ciudad, frente a la avenida Cotopaxi y Bulevar del Cementerio. Por su singular belleza artística realizada en ciprés, constituye un principal atractivo turístico de la ciudad de Tulcán, de la Provincia del Carchi y del país, reconocido a nivel nacional e internacional, por ser el único en le mundo en este género."/>
+    <meta name="keywords" content="Cementerio de Tulcán, Cementerio municipal de Tulcán, Visita virtual del cementerio de Tulcán, Cementerio José María Azael Franco Guerrero, Tour virtual del cementerio Tulcán, Destino turístico en Tulcán, Esculturas en verde, Esculturas en verde del cementerio de Tulcán, Esculturas en verde del cementerio José María Azael Franco Guerrero, Atractivos turísticos de Tulcán, Turismo Ecuador, Turismo Carchi, Turismo Tulcán, Municipio de Tulcán, Escultura camino al cielo, Parque de los recuerdos Tulcán, Patrimonio Cultural del Estado, Figuras en ciprés"/>
+    <meta name="author" content="Franklin Rosero"/>
+    <meta name="robots" content="noindex">
+
+    <!--Estilos-->
+    <link rel="stylesheet" href="css/pannellum.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <!--Preload-->
+    <div class="preload">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!--Interfaz de inicio-->
+    <div class="contenedor-imagnes">
+        <img class="fondo" src="images/logos/fondo.JPG" alt="">
+        <div class="contenedor-logos">
+            <div class="logos">
+                <div class="logo">
+                    <img src="images/logos/logo-1.jpeg" alt="">
+                </div>
+                <div class="logo">
+                    <img src="images/logos/logo-2.jpeg" alt="">
+                </div>
+            </div>
+            <div class="contenedor-boton-visita-virtual">
+                <button class="visita-virtual" id="botonVisitaVirtual">Visita Virtual</button>
+            </div>
+        </div>
+    </div>
+
+    <!--Interfaz de error-->
+    <div class="contenedor-error" id="contenedorError">
+        <img class="imagen-error" src="images/logos/error.JPG" alt="">
+        <div class="contenedor-elementos-error">
+            <div class="contenedor-titulo-error">
+                <h2 class="titulo-error">Se ha producido un error al cargar la escena</h2>
+            </div>
+            <div class="contenedor-botones-error">
+                <button class="reintentar" id="">Reintentar</button>
+                <button id="inicio">Inicio</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="panorama">
+        <!--Barra superior-->
+        <div class="nav-bar">
+            <div class="contenedor-titulo">
+                <span id="tituloEscena">Entrada</span>
+            </div>
+            <div class="contenedor-icono-menu">
+                <button type="button" id="btnMenu">
+                    <i class="bi bi-list" id="iconoMenu"></i>
+                </button>
+            </div>
+        </div>
+
+        <!--Menú lateral derecho-->
+        <div class="side-bar" id="side-bar">
+            <ul class="menu" id="menu">
+                <li class="menu-item" id="li-0">
+                    <div class="enlace">
+                        <div class="enlace-icono">
+                            <i class="bi bi-record-circle-fill" id="i-0"></i>
+                        </div>
+                        <div class="enlace-texto">
+                            <span class="enlace-activo" id="0-entrada">Entrada</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="menu-item" id="li-1">
+                    <div class="enlace">
+                        <div class="enlace-icono">
+                            <i class="bi bi-record-circle-fill" id="i-1"></i>
+                        </div>
+                        <div class="enlace-texto">
+                            <span id="18-informacion-turistica">ITUR (Información turística)</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="menu-item" id="li-2">
+                    <div class="enlace">
+                        <div class="enlace-icono">
+                            <i class="bi bi-record-circle-fill" id="i-2"></i>
+                        </div>
+                        <div class="enlace-texto">
+                            <span id="21-parque-derecho">Jardín ornamental</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="menu-item" id="li-3">
+                    <div class="enlace">
+                        <div class="enlace-icono">
+                            <i class="bi bi-record-circle-fill" id="i-3"></i>
+                        </div>
+                        <div class="enlace-texto">
+                            <span id="82-altar-de-dios">Parque Altar de Dios</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="menu-item" id="li-4">
+                    <div class="enlace">
+                        <div class="enlace-icono">
+                            <i class="bi bi-record-circle-fill" id="i-4"></i>
+                        </div>
+                        <div class="enlace-texto">
+                            <span id="4-avenida-principal-incasica">Imperio egipcio</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="menu-item" id="li-5">
+                    <div class="enlace">
+                        <div class="enlace-icono">
+                            <i class="bi bi-record-circle-fill" id="i-5"></i>
+                        </div>
+                        <div class="enlace-texto">
+                            <span id="6-avenida-principal-incasica">Punto de encuentro</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="menu-item" id="li-6">
+                    <div class="enlace">
+                        <div class="enlace-icono">
+                            <i class="bi bi-record-circle-fill" id="i-6"></i>
+                        </div>
+                        <div class="enlace-texto">
+                            <span id="10-avenida-principal-incasica">Osario</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="menu-item" id="li-7">
+                    <div class="enlace">
+                        <div class="enlace-icono">
+                            <i class="bi bi-record-circle-fill" id="i-7"></i>
+                        </div>
+                        <div class="enlace-texto">
+                            <span id="29-kiosko-estilo-frances-lado-norte-por-dentro">Kiosko estilo francés lado
+                                norte</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="menu-item" id="li-8">
+                    <div class="enlace">
+                        <div class="enlace-icono">
+                            <i class="bi bi-record-circle-fill" id="i-8"></i>
+                        </div>
+                        <div class="enlace-texto">
+                            <span id="34-avenida-transversal-derecha">Calle de la Veracruz (derecha)</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="menu-item" id="li-9">
+                    <div class="enlace">
+                        <div class="enlace-icono">
+                            <i class="bi bi-record-circle-fill" id="i-9"></i>
+                        </div>
+                        <div class="enlace-texto">
+                            <span id="57-escultura-piedra-virgen-de-legarda">Escultura en piedra de la Virgen De
+                                Legarda</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="menu-item" id="li-10">
+                    <div class="enlace">
+                        <div class="enlace-icono">
+                            <i class="bi bi-record-circle-fill" id="i-10"></i>
+                        </div>
+                        <div class="enlace-texto">
+                            <span id="76-esculturas-verde-y-mausoleos">Sol de oro de la Cultura Tolita</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="menu-item" id="li-11">
+                    <div class="enlace">
+                        <div class="enlace-icono">
+                            <i class="bi bi-record-circle-fill" id="i-11"></i>
+                        </div>
+                        <div class="enlace-texto">
+                            <span id="87-mausoleo-sindicato-choferes">Mauloseo del sindicato de choferes</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="menu-item" id="li-12">
+                    <div class="enlace">
+                        <div class="enlace-icono">
+                            <i class="bi bi-record-circle-fill" id="i-12"></i>
+                        </div>
+                        <div class="enlace-texto">
+                            <span id="89-miembros-segunda-mision-geodesica-francesa">Miembros segunda misión geodésica
+                                francesa</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="menu-item" id="li-13">
+                    <div class="enlace">
+                        <div class="enlace-icono">
+                            <i class="bi bi-record-circle-fill" id="i-13"></i>
+                        </div>
+                        <div class="enlace-texto">
+                            <span id="92-kiosko-estilo-frances-lado-sur-dentro">Kiosko estilo francés lado sur</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="menu-item" id="li-14">
+                    <div class="enlace">
+                        <div class="enlace-icono">
+                            <i class="bi bi-record-circle-fill" id="i-14"></i>
+                        </div>
+                        <div class="enlace-texto">
+                            <span id="96-avenida-transversal-izquierda">Calle de la Veracruz (izquierda)</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="menu-item" id="li-15">
+                    <div class="enlace">
+                        <div class="enlace-icono">
+                            <i class="bi bi-record-circle-fill" id="i-15"></i>
+                        </div>
+                        <div class="enlace-texto">
+                            <span id="127-pasaje-de-la-paz">Pasaje de la paz</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="menu-item" id="li-16">
+                    <div class="enlace">
+                        <div class="enlace-icono">
+                            <i class="bi bi-record-circle-fill" id="i-16"></i>
+                        </div>
+                        <div class="enlace-texto">
+                            <span id="119-escultura-piedra-virgen-de-la-piedad">Escultura en piedra Virgen De La
+                                Piedad</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="menu-item" id="li-17">
+                    <div class="enlace">
+                        <div class="enlace-icono">
+                            <i class="bi bi-record-circle-fill" id="i-17"></i>
+                        </div>
+                        <div class="enlace-texto">
+                            <span id="137-jesus-y-cruz-del-calvario">Jesús y cruz del calvario</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!--Cuadro de información en celulares inteligentes-->
+        <div class="contendor-modal">
+            <div class="contenedorTituloInformacion">
+                <div class="tituloInformacion">
+                    <span></span>
+                </div>
+                <div class="botonCerrarModal">
+                    <i id="cierraInformacion" class="bi bi-x-circle"></i>
+                </div>
+
+            </div>
+            <div class="modal">
+                <p id="contenido">
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/pannellum.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/mobile-detect.min.js"></script>
+    <script src="js/logica.js"></script>
+    <script src="js/datos.js"></script>
+</body>
+
+</html>
